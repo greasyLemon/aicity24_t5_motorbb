@@ -37,15 +37,15 @@ You can comment out the optional functionalities in main.py.
 
 `iou(box1, box2)`: calculate the Intersection of Union between 2 bounding box, which will later be used as thresholds in `bb_assign` and `nms`.
 
-`bb_assign(bboxes1, bboxes2, threshold)`: assign the 2 closest bounding boxes into a pair via calculating their center distance. Threshold is the maximum distance between 2 assigned boxes.
+`bb_assign(bboxes1, bboxes2, threshold)`: assign the 2 closest bounding boxes into a pair via calculating their center distance. `threshold` is the maximum distance between 2 assigned boxes.
 
 `concatenate_bb(bboxes)`: merge the assigned bounding boxes into 1 larger box with the `x_min, y_min, x_max, y_max` taken from the original bounding box coordinates.
 
-`nsm(bboxes, iou_threshold)`: Non-Maximum Supression algorithm for filtering out the duplicate bounding boxes. iou_threshold is the maximum iou value for the bounding box to be kept.
+`nsm(bboxes, iou_threshold)`: Non-Maximum Supression algorithm for filtering out the duplicate bounding boxes. `iou_threshold` is the maximum iou value for the bounding box to be kept.
 
 **How to run:**
 
-Run main.py:
+Run **main.py**:
 
 	python main.py --video_dir "YOUR_VIDEO_PATH" --root_path "YOUR_ROOT_PATH" --gt_path "YOUR_GROUND_TRUTH"
 
