@@ -11,9 +11,9 @@ def main(video_dir, root_path, gt_path):
     root_path = Path(root_path)
     gt_path = Path(gt_path)
 
-    for i in range(101):
-        video_path = video_dir / f"{i:03}.mp4"
-        chosen_vid = video_path.stem
+    for file in video_dir.rglob('*.mp4'):
+        chosen_vid = file.stem
+        video_path = video_dir / f"{chosen_vid:03}.mp4"
 
         extract_frms(root_path, video_path)
 
@@ -21,7 +21,7 @@ def main(video_dir, root_path, gt_path):
 
         # split(root_path, train=0.7, val=0.15, test=0.15)
         # test(root_path, chosen_vid)
-        print("Done vid: ", i)
+        print("Done vid: ", chosen_vid)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process some videos.")
