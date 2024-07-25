@@ -33,6 +33,9 @@ You can comment out the optional functionalities in main.py.
 3. Assign and merger the 2 closest (if any)** driver and motorcycle** bounding box into 1 motorcycle bounding box.
 4. Apply **Non-Maximum Supression** to filter out duplicate or remaining bounding boxes.
 
+![w](https://github.com/user-attachments/assets/796d8898-5198-4088-ae7a-8d97dc94dc8e)
+
+
 **Main function in concat.py:**
 
 `iou(box1, box2)`: calculate the Intersection of Union between 2 bounding box, which will later be used as thresholds in `bb_assign` and `nms`.
